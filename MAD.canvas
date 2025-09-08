@@ -1,0 +1,7 @@
+{
+	"nodes":[
+		{"id":"85226dd3c8f9e3a4","x":-600,"y":-32,"width":390,"height":212,"type":"text","text":"Days\n\n- id\n- user_id\n- date\n- foods = [ids] // foods eaten on that date\n- total_nutrition = {enrj, cal, ...}"},
+		{"id":"2fbf75fa7a85f8aa","x":-180,"y":-32,"width":250,"height":232,"type":"text","text":"Foods\n\n - name\n - enrj\n - cal\n - prot\n - fat\n - carb"}
+	],
+	"edges":[]
+}
