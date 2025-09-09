@@ -6,6 +6,7 @@ export async function connectDB(){
   
   if(mongoose.connection.readyState === 1) return mongoose.connection;
   await mongoose.connect(process.env.MONGODB_URI, { maxPoolSize: 10 });
+  
   return mongoose.connection;
 }
 

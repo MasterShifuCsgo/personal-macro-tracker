@@ -15,9 +15,9 @@
               "state": {
                 "file": "MAD.canvas",
                 "viewState": {
-                  "x": -232.1854840431829,
-                  "y": 1842.2204239855732,
-                  "zoom": -0.9999999999999996
+                  "x": -159.78409773342526,
+                  "y": 1763.0833455925233,
+                  "zoom": 3.3306690738754696e-16
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -173,5 +173,17 @@
     }
   },
   "active": "775acfbec7d22fe2",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "src/backend/database/functions/helpers/isMongooseModel.js",
+    "src/backend/database/functions/helpers",
+    "src/backend/database/functions/getDocument.js",
+    "src/backend/database/functions/documentExists.js",
+    "src/backend/database/functions",
+    "src/backend/api/endpoints/day/endpoints/EditDay.js",
+    "src/backend/api/endpoints/day/endpoints/GetDay.js",
+    "src/backend/api/endpoints/day/endpoints/Get",
+    "src/backend/api/endpoints/day/endpoints/Edit.js",
+    "src/backend/api/endpoints/day/endpoints",
+    "src/backend/api/endpoints/day/endpointes"
+  ]
 }

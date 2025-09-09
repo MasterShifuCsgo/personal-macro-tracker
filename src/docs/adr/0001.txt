@@ -2,7 +2,7 @@
 
 # ADR 0001: Use MongoDB for Project Database
 
-Status: 
+Status: Accepted
 Date: 8/9/2025
 
 ## Context
@@ -16,10 +16,11 @@ SQL database does not allow such simplicity.
 ## Consequences
 
 - Positive
- - easier development
+ - easier development, no tinkering with SQL
 
 - Negative
   - No strict schema enforcement: Use ODM like mongoose
+  - You dont know mongoDB
 
 
 

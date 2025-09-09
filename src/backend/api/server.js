@@ -37,15 +37,19 @@ async function shutdown(code = 0){
   
 }
 
+//maybe program more event handlers for logging?
 process.on("SIGINT", () => { shutdown(0) }); // on CTRL+C
 process.on("SIGTERM", () => { shutdown(0) }); // when Termination signal is emitted
+
+
 
 app.use(express.json());
 
 
 //routes
-//TODO: IMPLEMENT THE MongoDB MODALS
-//TODO: CODE THE API
+
+//TODO: CODE THE API "code day endpoints"
+
 
 
 connectDB().then(() => {

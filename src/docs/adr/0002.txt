@@ -1,0 +1,31 @@
+
+
+# ADR 0001: Use .Populate(name) instead of $lookup
+
+Status:  
+Date: 9/9/2025
+
+## Context
+Populate (Mongoose) – application-side join, convenience, multiple queries.
+$lookup (Aggregation) – database-side join, single query pipeline, more control.
+
+## Descision
+  since $lookup is harder to implement for me and its a small project, 
+  it would be more wise to use populate, because really, only one person will use it.
+
+## Consequences
+
+- Positive
+ - easier development
+
+- Negative
+  - When there are a lot of foods and days then populate 
+  will take much longer to complete, slowing down the server.
+
+
+
+
+
+
+
+
