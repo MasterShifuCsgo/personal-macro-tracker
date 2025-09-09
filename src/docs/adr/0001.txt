@@ -1,0 +1,30 @@
+
+
+# ADR 0001: Use MongoDB for Project Database
+
+Status: 
+Date: 8/9/2025
+
+## Context
+need an easy and understandable way of storing food and day data.
+SQL database does not allow such simplicity.
+
+## Descision
+  I will use MongoDB because it's simplicity of holding required database
+  It will be hosted locally and in atlas.
+
+## Consequences
+
+- Positive
+ - easier development
+
+- Negative
+  - No strict schema enforcement: Use ODM like mongoose
+
+
+
+
+
+
+
+
