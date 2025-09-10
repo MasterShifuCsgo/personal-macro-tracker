@@ -1,18 +1,16 @@
 import { Schema } from "mongoose";
 
 const FoodsSchema = new Schema({
- name: String,
- energy: Number,
- kcal: Number,
- protein: Number,
- fat: Number,
- carb: Number,
- fiber: Number,
- salt: Number,
- serving: Number //in grams (whats on the package)
-})
+  name: { type: String, required: true, unique: true },
+  energy: { type: String, required: true },
+  kcal: { type: String, required: true },
+  protein: { type: String, required: true },
+  fat: { type: String, required: true },
+  carb: { type: String, required: true },
+  fiber: { type: String, required: true },
+  salt: { type: String, required: true },
+  serving: { type: String, required: true }, //in grams
+});
 
-export const Foods = mongoose.model("Foods", FoodsSchema);
-
-
-
+const Foods = mongoose.model("Foods", FoodsSchema);
+export default Foods;

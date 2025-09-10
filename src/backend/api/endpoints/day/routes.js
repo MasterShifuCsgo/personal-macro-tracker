@@ -1,14 +1,10 @@
-import { Router } from "express"
-import EditDay from "./endpoints/EditDay";
+import { Router } from "express";
+import EditDay from "./endpoints/EditDay.js";
+import GetDay from "./endpoints/GetDay.js";
 
-export default function makeDayEndpoints(){
+export default function makeDayEndpoints() {
   const router = Router();
-  router.get("/get/:day_id", EditDay);
-  router.get("/get/:day_id", EditDay);
+  router.post("/edit/:day_id", EditDay);
+  router.get("/", GetDay);
   return router;
 }
-
-
-
-
-

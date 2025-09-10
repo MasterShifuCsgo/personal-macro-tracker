@@ -1,15 +1,13 @@
 import mongoose, { Schema } from "mongoose";
 
 const DaysSchema = new Schema({
-  date: Date,
-  foods: [{ type: mongoose.Schema.Types.ObjectId, ref: "Foods" }]
-})
+  date: { type: Date, required: true, unique: true },
+  foods: {
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Foods" }],
+    required: true,
+    default: [],
+  },
+});
 
-export default Days = mongoose.model("Days", DaysSchema);
-
-
-
-
-
-
-
+const Days = mongoose.model("Days", DaysSchema);
+export default Days;
