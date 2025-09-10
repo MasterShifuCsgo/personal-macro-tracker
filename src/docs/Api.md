@@ -1,11 +1,18 @@
 
+# API Documentation
 
-every api returns a standardized result:
+## API standardized result: what can the api send?
+
+ Object { 
+  **error** - String - includes error as string
+  **result** - Object | Array - received data from api
+ }
+Error codes are send as response status codes through received http messages. 
+
+both fields are represented in an object.
+
+---
 
 
-{error: string | null, result: Array | Object | null}
-error codes are send as response status codes through received http messages. 
-e.g. 401, 501 are sent by the server and processed by the browser. 
 
-result: null - is only returned when no result was meant to be sent. 
 
