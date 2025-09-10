@@ -4,7 +4,7 @@ import GetDay from "./endpoints/GetDay.js";
 
 export default function makeDayEndpoints() {
   const router = Router();
-  router.post("/edit/:day_id", EditDay);
+  router.put("/", EditDay);
   router.get("/", GetDay);
   return router;
 }
