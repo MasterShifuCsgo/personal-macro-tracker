@@ -13,6 +13,10 @@ SQL database does not allow such simplicity.
   I will use MongoDB because it's simplicity of holding required database
   It will be hosted locally and in atlas.
 
+  dont know what the fuck i was thinking. 
+  there is literally no strict inforcement, so i have to do this with models and shemas in mongoose.
+  you could have created tables in sql and linked them with another shadow table.
+
 ## Consequences
 
 - Positive
