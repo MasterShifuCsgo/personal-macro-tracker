@@ -18,10 +18,7 @@
 
 ---
 
-### Special Case: Non-Logic File Changes
-
-If you **updated a diagram** or some **project meta-file** that isn't code or logic:
-
-- **Use `docs`** – when the change is purely documentation-related (like architecture diagrams, README updates):
-  ```bash
-  docs: update microservice architecture diagram
+<type>(optional-scope): <short description>
+examples:
+ 1. feat(api): add endpoint for user profiles
+ 2. fix(db): resolve index creation error on startup
