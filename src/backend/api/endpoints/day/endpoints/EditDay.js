@@ -8,7 +8,7 @@ export default async function EditDay(req, res) {
 
   const { error } = DaysTypeCheck.validate({ id: id, foods: newFoods })
 
-  if (error) {
+  if(error) {
     return res.status(400).send({ error: error.details[0].message })
   }
 

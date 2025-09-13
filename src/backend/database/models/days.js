@@ -2,8 +2,8 @@ import Joi from "joi"
 import mongoose, { Schema } from "mongoose"
 
 export const DaysTypeCheck = Joi.object({
-  id: Joi.string().hex().length(24).required(),
-  date: Joi.date(),
+  id: Joi.string().hex().length(24),
+  date: Joi.string(), // use getToday().
   foods: Joi.array()
     .items(Joi.string().hex().length(24)) // same as mongoose.Types.ObjectId
     .required(),
@@ -11,7 +11,7 @@ export const DaysTypeCheck = Joi.object({
 
 const DaysSchema = new Schema({
   date: {
-    type: Date,
+    type: String,
     required: true,
     unique: true,
     default: new Date(),

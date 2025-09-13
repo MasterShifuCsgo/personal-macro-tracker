@@ -5,10 +5,10 @@ export async function connectDB() {
   
   if (mongoose.connection.readyState === 1) return mongoose.connection
   await mongoose.connect(process.env.MONGODB_URI, {
-    maxPoolSize: 10,
+    maxPoolSize: 50,
     autoIndex: true, //automatically indexes your models
     serverSelectionTimeoutMS: 5000, // how long the server looks for a healty node to insert or get data 5s
-    socketTimeoutMS: 2000, // hold long a single operation can be open for before being forcefully closed
+    socketTimeoutMS: 2500, // how long a single operation can be open for before being forcefully closed
   })
 
   return mongoose.connection

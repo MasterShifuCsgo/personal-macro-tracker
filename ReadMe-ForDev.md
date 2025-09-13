@@ -3,12 +3,15 @@
 # Todo's
  *they are not ordered in importance*
 
-2h, get backend working
- create collections 
- code the api
 
-2h, get frontend working
+api is completed
 
 
+start programming the frontend 
+ - create plan for the website
+ - code the website based on plan.
+
+test 
+ - create tests for every api endpoint and button on the frontend
 
 

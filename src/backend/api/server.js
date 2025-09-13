@@ -53,15 +53,13 @@ app.use(express.json())
 
 //routes
 app.use("/day", makeDayEndpoints())
-app.use("/food", makeFoodEndpoints());
+app.use("/food", makeFoodEndpoints())
 
 connectDB()
   .then(() => {
     server = app
       .listen(port, () => {
-        console.log(
-          `Server is running on http://localhost:${port}`
-        )
+        console.log(`Server is running on http://localhost:${port}`)
       })
       .on("error", (err) => {
         console.error("Failed to start server:", err)
