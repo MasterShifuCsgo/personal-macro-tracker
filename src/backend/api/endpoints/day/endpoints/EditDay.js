@@ -1,18 +1,37 @@
+import getToday from '../../../../../global/helpers/getToday.js'
 import Days, {
   DaysTypeCheck,
-} from "../../../../database/models/days.js"
+} from '../../../../database/models/days.js'
+import findDayByDate from '../helpers/findDayByDate.js'
+import findDayById from '../helpers/findDayById.js'
 
 export default async function EditDay(req, res) {
-  const id = req.query["day_id"]
-  const newFoods = req.body["foods"]
+  const id = req.query['day_id']
+  const date = req.query['date']
+  const newFoods = req.body['foods']  
+
+  if (!id && !date) {
+    return res.status(400).send({
+      error: "'day_id' or 'date' were not provided.",
+    })
+  }
+
+  if (id && date) {
+    return res.status(400).send({
+      error:
+        "both 'day_id' and 'date' were provided. Don't know by which to search",
+    })
+  }
 
   const { error } = DaysTypeCheck.validate({ id: id, foods: newFoods })
 
-  if(error) {
+  if (error) {
     return res.status(400).send({ error: error.details[0].message })
   }
 
-  const document = await Days.findById(id)
+  //find day  
+  const document = date ? await findDayByDate(date) : await findDayById(id);
+
   if (!document) {
     return res.status(400).send({
       error: `day with '${id}' does not exist`,
@@ -23,8 +42,9 @@ export default async function EditDay(req, res) {
   try {
     await document.save()
   } catch (err) {
+    console.log(err);
     return res.status(400).send({
-      error: "array has food id/s that do not exist on the database.",
+      error: 'array has food id/s that do not exist on the database.',
     })
   }
 

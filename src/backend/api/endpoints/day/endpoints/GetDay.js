@@ -1,30 +1,13 @@
-import Days, {
-  DaysTypeCheck,
-} from "../../../../database/models/days.js"
-
-async function findDayById(id) {
-  const { error } = DaysTypeCheck.extract("id").validate(id)
-  if (error) {
-    return { error: error.details[0].message }
-  }
-  return await Days.findById(id).populate("foods")
-}
-
-async function findDayByDate(date) {
-  const { error } = DaysTypeCheck.extract("date").validate(date)
-  if (error) {
-    return { error: error.details[0].message }
-  }
-  return await Days.findOne({ date }).populate("foods")
-}
+import findDayByDate from '../helpers/findDayByDate.js'
+import findDayById from '../helpers/findDayById.js'
 
 /*
   to create new day, just call it with any non-valid id.
   for example: nr 1 will always create a new day,
 */
 export default async function GetDay(req, res) {
-  const id = req.query["day_id"]
-  const date = req.query["date"]
+  const id = req.query['day_id']
+  const date = req.query['date']
 
   if (!id && !date) {
     return res.status(400).send({

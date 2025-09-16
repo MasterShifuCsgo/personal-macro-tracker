@@ -1,0 +1,8 @@
+
+//This is only for VS code.
+{
+  "compilerOptions": {
+    "baseUrl": "src" 
+  },
+  "include": ["src"]
+}

@@ -1,5 +1,6 @@
 import "../../../env.js" // importing .env
 import express from "express"
+import cors from "cors"
 import { connectDB } from "../database/index.js"
 import mongoose from "mongoose"
 import makeDayEndpoints from "./endpoints/day/routes.js"
@@ -7,7 +8,11 @@ import makeFoodEndpoints from "./endpoints/food/routes.js"
 
 const app = express()
 const port = process.env.PORT
-const MongoURI = process.env.MONGODB_URI
+
+const corsOptions = {
+  origin: ["http://localhost:5173"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}
 
 let server
 let isShuttingDown = false
@@ -49,9 +54,11 @@ process.on("SIGTERM", () => {
   shutdown(0)
 }) // when Termination signal is emitted
 
+// ----Middleware----
+app.use(cors(corsOptions))
 app.use(express.json())
 
-//routes
+// ----Routes----
 app.use("/day", makeDayEndpoints())
 app.use("/food", makeFoodEndpoints())
 
