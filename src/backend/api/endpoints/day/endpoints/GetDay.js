@@ -30,9 +30,8 @@ export default async function GetDay(req, res) {
       return res.status(400).send({ error: `Day doesn't exist` })
     }
 
-    return res.status(201).send({ result: day })
-  } catch (err) {
-    console.log(err)
+    return res.status(200).send({ result: day })
+  } catch (err) {    
     return res
       .status(400)
       .send({ error: `Type validation error: ${err}` })

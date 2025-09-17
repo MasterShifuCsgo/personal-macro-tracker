@@ -11,6 +11,7 @@ export default function Navbar({ component, setComponent }) {
    name: 'Foods',
    selected: component === 'foods',
    onClick: () => setComponent('foods'),
+   style: "bg-green-primary"
   },
  ]
 
@@ -23,8 +24,8 @@ export default function Navbar({ component, setComponent }) {
       key={button.name} 
       onClick={button.onClick}
       className={`${buttonStyle} ${
-       button.selected ? buttonSelected : ''
-      }`}
+       button.selected ? buttonSelected + " " + button?.style : ''
+      }` }
      >
       {button.name}
      </button>
