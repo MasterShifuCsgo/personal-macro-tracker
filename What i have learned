@@ -1,9 +1,72 @@
+1. **Improve problem-solving skills**  
+    Better problem-solving directly improves programming ability.
+    
+    - It helps organize code logically.        
+    - Leads to cleaner, more efficient algorithms.        
+    - Reduces complexity by approaching problems systematically.
+        
+2. **Code quality mindset matters**  
+    A project feels wrong when the codebase is messy and unmaintainable.
+    
+    - Writing maintainable code requires learning proven practices, not just trial and error.      
+    - Read books or study experienced developers’ code to understand proper structure.
+        
+3. **Pass responsibility, don’t scatter checks**
+    
+    - Avoid doing “weird checks” everywhere before calling a function.        
+    - Each function should **own its responsibilities**.        
+    - Example:        
+        ```
+        // Bad const numberf = NumberFormatter(name, number || 0); 
+        // Good const numberf = NumberFormatter(name, number);
+        ```
+        Let `NumberFormatter` handle defaulting, not the caller.
+        
+4. **Fix file organization**  
+    A chaotic folder structure discourages you from navigating and improving the project.
 
-1. you have to get better at problem solving.
- this will simply make you a better programmer. it will help you organize code much better, create algorithims and solutions to problems that will make your code clean.
+    - Define a clear, scalable folder layout.        
+    - Group by feature or domain, not by random file type.
+        
+5. **Plan before you code**  
+    Jumping straight into implementation leads to trash projects.    
+    - Write a **technical document** first, defining how features and flows will work.        
+    - Define data structures, APIs, and component responsibilities before coding.
+        
+6. **Make reusable building blocks modular**
+    
+    - Components like modals, toasts, and context providers should be built as **modular tools**, not one-off hacks.        
+    - Planning their usage upfront keeps the codebase clean and consistent.
 
-2. there is something weirdly wrong about the entire project. like a vibe of bad written code. 
-i think it comes from my belief and real proof that i write code that is hardly maintanable. 
-i should learn how to write good code from someone or read a book about it.
+7. **Avoid creating technical debt through unclear components**
+    
+    - Many issues came from writing components with **unclear definitions** — you just “make it work” and move on.        
+    - Define components with a **clear contract**:        
+        - What does it do?            
+        - What does it return?      
+    - Goal: once built, **never modify it again** unless requirements change.        
+    - This mindset accelerates understanding and minimizes bugs.
+        
 
+---
+
+### Key Takeaways
+
+- **Think before coding:** plan architecture, structure, and component contracts.    
+- **Write clean, maintainable code:** read books like _Clean Code_ and _Clean Architecture_.    
+- **Shift from patchwork to systems thinking:** make functions and components responsible for themselves.    
+- **Reduce technical debt:** prioritize clarity and long-term maintainability over short-term hacks.
+
+
+
+
+This project is fucked..
+
+what lead to the downfall of this project? technical debt.
+what exactly went wrong? its very difficult to implement new features or change some.
+maybe the way of structuring files would make it easier
+and making a technical document for how to do something like this.
+
+1. use the new file strucutring method you learned
+2. learn how to create a techincal document describing how the project works
 

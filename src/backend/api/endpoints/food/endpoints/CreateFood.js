@@ -7,10 +7,10 @@ import { FoodsTypeCheck } from "../../../../../shared/FoodsSchema.js";
  */
 export default async function CreateFood(req, res) {
   //get newfood
-  const newFood = req.body["food"]
-  const { error } = FoodsTypeCheck.validate(newFood);
-  if(error){
-    return res.status(400).send({error: error.details[0].message});
+  const newFood = req.body["food"]  
+  const { error } = FoodsTypeCheck.fork(['id'], (schema) => { return schema.optional() }).validate(newFood);
+  if (error) {
+    return res.status(400).send({ error: error.details[0].message });
   }
 
   //dont allow foods with similar names
@@ -24,5 +24,5 @@ export default async function CreateFood(req, res) {
   Foods.create(newFood)
     .then((doc) => console.log(doc))
     .catch((err) => console.log(err))
-  res.sendStatus(201)
+  res.sendStatus(204)
 }

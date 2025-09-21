@@ -3,7 +3,7 @@ import StatBlock from '../StatBlock/StatBlock.jsx'
 /**
  * @param {Object} food - list of food attributes (kcal, protein).
  */
-export default function FoodDetails({ food }) {
+export default function FoodDetailsRow({ food }) {
 	return (
 		<div
 			className="flex flex-wrap justify-center p-5

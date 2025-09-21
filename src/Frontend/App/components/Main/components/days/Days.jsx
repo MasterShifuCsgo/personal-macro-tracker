@@ -3,7 +3,7 @@ import toast from 'react-hot-toast'
 import api from '../../../../../../global/helpers/api.js'
 import getToday from '../../../../../../global/helpers/getToday'
 import TableItem from '../components/TableItem/TableItem'
-import FoodDetails from '../components/FoodDetails/FoodDetails.jsx'
+import FoodDetailsRow from '../components/FoodDetails/FoodDetailsRow.jsx'
 
 export default function Days({
 	day = null,
@@ -104,7 +104,7 @@ export default function Days({
 				<div
 					className="flex flex-col w-screen border-t-2 border-blue-primary pb-1
           justify-center items-center pt-8">
-					<div className="flex flex-wrap items-center justify-center">
+					<div className="flex flex-wrap items-center justify-center w-screen">
 						{foods.map((food, id) => (
 							<TableItem
 								key={id + 'key'}
@@ -117,7 +117,7 @@ export default function Days({
 					{!totalNutrition ? (
 						<p>Loading total nutrition...</p>
 					) : (
-						<FoodDetails food={totalNutrition} />
+						<FoodDetailsRow food={totalNutrition} />
 					)}
 				</div>
 			</div>

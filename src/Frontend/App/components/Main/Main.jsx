@@ -8,7 +8,7 @@ export default function Main({ activeComponent }) {
   const [foods, setFoods] = useState([]) // for foods
 
   return (
-    <main>
+    <main className='w-screen'>
       {activeComponent === 'days' ? (
         <Days
           day={day}

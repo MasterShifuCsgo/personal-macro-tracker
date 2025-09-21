@@ -16,15 +16,15 @@ function transformObjectToQueryString(obj) {
  *
  * @param {String} endpoint - what endpoint to call 'day' or 'foods'?
  * @param {Object} options - hold optional paramters for fetch and url
- * @param {string} [options.method] - GET, POST, PUT, DELETE, ...
+ * @param {string} [options.method] - GET, POST, PUT, DELETE, ... default is GET
  * @param {Object} [options.querys] - holds key value pairs of what to add in queries. {day_id: "1234"}
  * @param {Object} [options.body] - send body
- * @returns {<Promise>() => JSON} - promise that holds the received JSON
+ * @returns {<Promise>() => JSON} promise that holds the received JSON
  */
 export default async function api(
   endpoint,
   { method = "GET", querys, body }
-) {  
+) {
   const result = await fetch(
     `${API_BASE_URL}/${endpoint}${querys ? transformObjectToQueryString(querys) : ""}`,
     {
@@ -35,13 +35,17 @@ export default async function api(
       body: JSON.stringify(body)
     }
   )
-    .then((r) => {
-      if(r.status == 204){
+    .then((r) => {            
+      console.log(r)
+      if (r.status >= 204 && r.status < 300) {
         return;
       }      
-      return r.json()
+      console.log(r.ok)
+      if(!r.ok){        
+        throw r.json() // throw the {error: "error"} from the API
+      }      
+      return r.json() // request followed a happy path.
     })
-    .then((serialized) => serialized)
     .catch((err) => {
       console.error("something went wrong with api call:\n", err);
       throw err;
@@ -49,3 +53,5 @@ export default async function api(
 
   return result
 }
+
+

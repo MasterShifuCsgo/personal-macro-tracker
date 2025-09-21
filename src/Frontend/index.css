@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body.no-scroll{
+  overflow: hidden;
+}
+
 @theme {
   --color-blue-primary: #2DAAFF;  
   --color-blue-secondary: #2DAAFF;
@@ -7,5 +11,37 @@
   --color-red-secondary: #EB3939;
   --color-green-primary: #13A92E;
   --shadow-tableItem: 0 0 2px 1px rgba(0, 0, 0, 0.16);
-  --shadow-form: 0 0 10px 1px rgba(0, 0, 0, 0.16);
+  --shadow-form: 0 0 10px 1px rgba(0, 0, 0, 0.16);  
 }
+
+@layer components {
+  .btn {
+    @apply border px-4 py-1 rounded-md border-blue-primary cursor-pointer text-xl font-semibold select-none
+    transition duration-200 ease-in-out;
+  }
+
+  .btn:hover{
+    @apply bg-blue-500 text-white
+  }
+
+  .btn-active{
+    @apply bg-blue-primary text-white;
+  } 
+
+  .btn:hover, .clickable:hover {
+    @apply scale-105 brightness-105;
+  }
+
+  .btn:active, .clickable:active {
+    @apply scale-95 brightness-90 ;
+  }
+
+  .clickable {
+    @apply transition duration-200 ease-in-out cursor-pointer select-none;
+  }  
+  
+}
+
+
+
+
