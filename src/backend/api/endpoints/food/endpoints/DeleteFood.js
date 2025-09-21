@@ -1,6 +1,7 @@
-import Foods, {
-  FoodsTypeCheck,
-} from "../../../../database/models/foods.js"
+import Foods from "../../../../database/models/foods.js"
+import { FoodsTypeCheck } from "../../../../../shared/FoodsSchema.js"
+
+
 
 export default async function DeleteFood(req, res) {
   //get food_id
@@ -21,7 +22,6 @@ export default async function DeleteFood(req, res) {
 
   //delete
   Foods.findByIdAndDelete(id)
-    .then((doc) => console.log(`Deleted: ${doc}`))
     .catch((err) => console.err(`failed to delete: ${id}.\n ${err}`))
-  return res.status(204)
+  return res.sendStatus(204)
 }

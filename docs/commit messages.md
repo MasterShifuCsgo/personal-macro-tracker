@@ -1,4 +1,4 @@
-### Commit Types (Explanation → Example)
+# Commit Types (Explanation → Example)
 
 | **Type**                   | **Explanation**                                                                                        | **Example**                                                          |
 | -------------------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
@@ -17,13 +17,11 @@
 | **security** _(optional)_  | Fixes **security issues** or vulnerabilities.                                                          | `security: patch XSS vulnerability in error handler`                 |
 | **config** _(optional)_    | Changes to **runtime configuration** or constants that affect production behavior.                     | `config: increase missing-node timeout to 30s`                       |
 | **refactor!** _(optional)_ | Refactoring that **alters production behavior** or logic, potentially breaking existing functionality. | `refactor!: change meal grouping logic to support nested categories` |
-| **wip** *(optional)* | Marks **incomplete or experimental work** that is still in progress. | `wip: implement initial structure for new scheduling system` |
-
+| **wip** _(optional)_       | Marks **incomplete or experimental work** that is still in progress.                                   | `wip: implement initial structure for new scheduling system`         |
 
 ---
 
-<type>(optional-scope): <short description>
-examples:
+<type>(optional-scope): <short description> examples:
 
 1.  feat(api): add endpoint for user profiles
 2.  fix(db): resolve index creation error on startup

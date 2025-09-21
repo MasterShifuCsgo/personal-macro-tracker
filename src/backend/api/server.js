@@ -54,9 +54,31 @@ process.on("SIGTERM", () => {
   shutdown(0)
 }) // when Termination signal is emitted
 
+
+
+
 // ----Middleware----
 app.use(cors(corsOptions))
 app.use(express.json())
+
+app.use((req, res, next) => {
+
+  const oldRes = res.send;
+
+  res.send = function (data) {
+    console.log("-------- REQUEST --------");
+    console.log("Endpoint:", req.originalUrl);  // full URL path
+    console.log("Method:", req.method);        // GET, POST, etc.
+    console.log("Request body:", req.body);
+    console.log("Response:", data);
+    console.log("-------- REQUEST --------");
+    oldRes.call(this, data);
+  }
+
+  next()
+})
+
+
 
 // ----Routes----
 app.use("/day", makeDayEndpoints())

@@ -1,9 +1,11 @@
-import getToday from '../../../../../global/helpers/getToday.js'
-import Days, {
-  DaysTypeCheck,
-} from '../../../../database/models/days.js'
+import { DaysTypeCheck } from '../../../../database/models/days.js'
 import findDayByDate from '../helpers/findDayByDate.js'
 import findDayById from '../helpers/findDayById.js'
+
+/*
+only need to send date or date_id for referencing the specific day.
+needs foods array which only has Food Mongoose object Id in them, hex 24 strings.
+*/
 
 export default async function EditDay(req, res) {
   const id = req.query['day_id']

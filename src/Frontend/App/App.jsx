@@ -2,7 +2,8 @@ import "./App.css"
 import { useState } from "react"
 import Navbar from "./components/Main/components/navbar/Navbar"
 import Main from "./components/Main/Main"
-import Total from "./components/Main/components/Total/Total"
+import { Toaster } from "react-hot-toast"
+import Modal from "./components/Main/components/components/modal/Modal"
 
 
 function App() {
@@ -10,12 +11,13 @@ function App() {
 
   return (
     <>
+      <Toaster></Toaster>  
+      <Modal></Modal>
       <Navbar
         component={component}
         setComponent={(e) => setComponent(e)}
       />
-      <Main activeComponent={component}/>
-      <Total />
+      <Main activeComponent={component}/>      
     </>
   )
 }

@@ -1,6 +1,5 @@
-import Foods, {
-  FoodsTypeCheck,
-} from "../../../../database/models/foods.js"
+import Foods from "../../../../database/models/foods.js"
+import { FoodsTypeCheck } from "../../../../../shared/FoodsSchema.js"
 
 export default async function EditFood(req, res) {
   const id = req.query["food_id"]

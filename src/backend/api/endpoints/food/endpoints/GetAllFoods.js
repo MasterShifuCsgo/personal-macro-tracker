@@ -1,4 +1,3 @@
-import Days from "../../../../database/models/days.js";
 import Foods from "../../../../database/models/foods.js";
 
 

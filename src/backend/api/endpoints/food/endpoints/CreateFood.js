@@ -1,4 +1,7 @@
-import Foods, {FoodsTypeCheck} from "../../../../database/models/foods.js"
+import Foods from "../../../../database/models/foods.js"
+import { FoodsTypeCheck } from "../../../../../shared/FoodsSchema.js";
+
+
 /**
  * expects 'food' field in send body
  */

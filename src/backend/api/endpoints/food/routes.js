@@ -9,7 +9,6 @@ export default function makeFoodEndpoints() {
   router.post("/", CreateFood)
   router.delete("/", DeleteFood)
   router.put("/", EditFood)
-  router.get("/", GetAllFoods)
-  // more ...
+  router.get("/", GetAllFoods)  
   return router
 }
